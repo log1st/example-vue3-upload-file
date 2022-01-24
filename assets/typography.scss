@@ -1,0 +1,20 @@
+$defaultWF: 500;
+
+@mixin t($fs, $lh: 1, $wf: $defaultWF, $ls: 0) {
+  font-size: #{$fs}px;
+  @if($lh == #{$lh}) {
+    line-height: $lh;
+  } @else {
+    line-height: #{$lh}px;
+  }
+  font-weight: $wf;
+  letter-spacing: #{$ls}px;
+}
+
+@mixin text($fontWeight: $defaultWF, $letterSpacing: 0) {
+  @include t(16, 21, $fontWeight, $letterSpacing)
+}
+
+@mixin title($fontWeight: $defaultWF, $letterSpacing: 0) {
+  @include t(32, 44, $fontWeight, $letterSpacing)
+}
